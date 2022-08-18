@@ -1,5 +1,12 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
+
+{{ departmentData | json }}
+<div *ngFor="let item of departmentData | keyvalue">
+  {{item | json }}
+  
+</div>
+<hr>
 <table border="1" style="width:100%">
   <tr>
     <td>แผนกสินค้า</td>
@@ -7,8 +14,8 @@
     <td>
       <select name="department" (blur)="searchCategory()" 
       [(ngModel)]='departmentName' >
-        <option *ngFor="let departmentName of departmentData">
-          {{ departmentName }}
+        <option *ngFor="let item of departmentData | keyvalue">
+          {{ item.value }}
         </option>
       </select>
     </td>

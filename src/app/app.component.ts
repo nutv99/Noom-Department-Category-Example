@@ -11,7 +11,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  departmentData: string[] = ['A', 'B', 'C'];
+  departmentData : {} = [
+  { categorycode: 'A10_1', categoryDesc: 'นาฬิกาผู้หญิง'},
+  { categorycode: 'A10_2', categoryDesc: 'นาฬิกาผู้ชาย'}
+  
+]
   categoryData: string[] = [];
   groupData: string[] = [];
 
@@ -25,8 +29,9 @@ export class AppComponent {
 
   searchCategory() {
     //alert(this.departmentName)
+    console.clear();
     this.categoryData = ['A1', 'A2'];
-    const url = 'https://lovetoshopmall.com/dataservice/category.php?departmentName='+this.departmentName;
+    const url = 'https://lovetoshopmall.com/testcors.php?Name='+this.departmentName;
     this.http.get<any>(url).subscribe( response => {
       console.log(response)
 
@@ -36,7 +41,7 @@ export class AppComponent {
   searchGroup() {
     //alert(this.categoryName)
     this.groupData = ['A1111', 'A2222'];
-    const url = 'https://lovetoshopmall.com/dataservice/category.php?departmentName='+this.departmentName;
+    const url = 'https://lovetoshopmall.com/testcors.php?Name=?departmentName='+this.departmentName;
     this.http.post(url,this.categoryName).subscribe(response =>{
       console.log(response)
     })
