@@ -1,0 +1,35 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<table border="1" style="width:100%">
+  <tr>
+    <td>แผนกสินค้า</td>
+    <td>:</td>
+    <td>
+      <select name="department" (blur)="searchCategory()" 
+      [(ngModel)]='departmentName' >
+        <option *ngFor="let departmentName of departmentData">
+          {{ departmentName }}
+        </option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td>ประเภทสินค้า</td>
+    <td></td>
+    <td>
+      <select name="category" (blur)="searchGroup()" [(ngModel)]='categoryName'>
+      <option *ngFor="let categoryName of categoryData">
+        {{ categoryName }}
+      </option>
+    </select></td>
+  </tr>
+  <tr>
+    <td>กลุ่มสินค้า</td>
+    <td></td>
+    <td><select name="groupname" >
+      <option *ngFor="let groupName of groupData">
+        {{ groupName }}
+      </option>
+    </select></td>
+  </tr>
+</table>
