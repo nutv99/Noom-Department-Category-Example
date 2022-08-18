@@ -40,6 +40,5 @@ export class AppComponent {
     this.http.post(url,this.categoryName).subscribe(response =>{
       console.log(response)
     })
-
   }
 }
