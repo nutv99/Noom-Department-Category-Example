@@ -11,17 +11,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  departmentData : {} = [
-  { categorycode: 'A10_1', categoryDesc: 'นาฬิกาผู้หญิง'},
-  { categorycode: 'A10_2', categoryDesc: 'นาฬิกาผู้ชาย'}
-  
-]
-  categoryData: string[] = [];
+  departmentData  = [
+  { categorycode: 'A1', categoryDesc: 'นาฬิกาผู้หญิง'},
+  { categorycode: 'A2', categoryDesc: 'นาฬิกาผู้ชาย'}  
+ ]
+  categoryData   = [];
   groupData: string[] = [];
 
   departmentName : string = '' ;
   categoryName : string = '' ;
-  groupName : string = '' ;
+  groupName : string = '' ; 
+
+  resultShow : any = '' ;
 
   constructor(private http: HttpClient) {}
 
@@ -30,10 +31,13 @@ export class AppComponent {
   searchCategory() {
     //alert(this.departmentName)
     console.clear();
+    //alert(this.departmentName)
     this.categoryData = ['A1', 'A2'];
-    const url = 'https://lovetoshopmall.com/testcors.php?Name='+this.departmentName;
+    const url = 'https://lovetoshopmall.com/testcors.php?departmentcode='+this.departmentName;
     this.http.get<any>(url).subscribe( response => {
       console.log(response)
+      this.resultShow = response ;
+      this.categoryData = response ;
 
     })
   }

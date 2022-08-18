@@ -14,8 +14,8 @@
     <td>
       <select name="department" (blur)="searchCategory()" 
       [(ngModel)]='departmentName' >
-        <option *ngFor="let item of departmentData | keyvalue">
-          {{ item.value }}
+        <option *ngFor="let item of departmentData" value={{item.categorycode}}>
+          {{ item.categoryDesc }}
         </option>
       </select>
     </td>
@@ -25,8 +25,8 @@
     <td></td>
     <td>
       <select name="category" (blur)="searchGroup()" [(ngModel)]='categoryName'>
-      <option *ngFor="let categoryName of categoryData">
-        {{ categoryName }}
+      <option *ngFor="let item of categoryData">
+        {{ item.categoryDesc }}
       </option>
     </select></td>
   </tr>
@@ -40,3 +40,5 @@
     </select></td>
   </tr>
 </table>
+
+<!-- {{ resultShow |json}} -->
