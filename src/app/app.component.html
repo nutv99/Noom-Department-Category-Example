@@ -5,7 +5,8 @@
 <div *ngFor="let item of departmentData | keyvalue">
   {{item | json }}
   
-</div>
+</div> 
+<button (click)="saveDataToDB()">Save </button>
 <hr>
 <table border="1" style="width:100%">
   <tr>
@@ -25,7 +26,7 @@
     <td></td>
     <td>
       <select name="category" (blur)="searchGroup()" [(ngModel)]='categoryName'>
-      <option *ngFor="let item of categoryData">
+      <option *ngFor="let item of categoryData" value={{item.categorycode}}>
         {{ item.categoryDesc }}
       </option>
     </select></td>
@@ -34,8 +35,8 @@
     <td>กลุ่มสินค้า</td>
     <td></td>
     <td><select name="groupname" >
-      <option *ngFor="let groupName of groupData">
-        {{ groupName }}
+      <option *ngFor="let item of  groupData">
+        {{ item.categoryDesc }}
       </option>
     </select></td>
   </tr>
