@@ -8,7 +8,7 @@
   {{item | json }}
   
 </div>  -->
-{{ resultShow | json}}
+<!-- {{ resultShow | json}} -->
 <button (click)="testSearch()">Search RX </button>
 <hr>
 <table border="1" style="width:100%">
@@ -45,6 +45,15 @@
   </tr>
 </table> 
 
+<hr>
+<h2>Test</h2>
+<table border=1 width=100%>
+
+  <tr *ngFor ="let d of resultShow">
+   <td>{{d.mainImageURL}}</td>
+  </tr>
+
+</table>
  
 
 <!-- {{ resultShow |json}} -->
