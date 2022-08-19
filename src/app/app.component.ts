@@ -33,12 +33,14 @@ export class AppComponent  implements OnInit {
   ngOnInit() {
     // this.resultShow = this.myservice.getDatasUniverSal('a001') ;
     // console.log('DataLoad' ,this.resultShow ) ;
+    this.getInit();
   }
 
   name = 'Angular ' + VERSION.major; 
 
-  getInit() {
-    this.resultShow  = this.myservice.getDatasUniverSal('a001') ;
+  async getInit() {
+    this.resultShow  = await this.myservice.getDatasUniverSal('a001') ;
+    console.log('DataLoad By Init1' ,this.resultShow ) ;
   }
 
   getIni2() {

@@ -38,7 +38,7 @@ export class MyHttpService {
   constructor(private http:HttpClient) { }
 
   public getDatas(): Observable<any> {
-   const url = 'https://reqres.in/api/users?page=1';
+  const url = 'https://reqres.in/api/users?page=1';
 
     return this.http.get<any>(url);
   }
@@ -56,7 +56,6 @@ export class MyHttpService {
 
   public UpdateDatas(dataPost:any): Observable<any> {
     const url = 'https://reqres.in/api/users?page=1';
- 
     return this.http.patch<any>(url,dataPost);
   }
 
