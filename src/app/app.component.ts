@@ -38,8 +38,15 @@ export class AppComponent  implements OnInit {
   name = 'Angular ' + VERSION.major; 
 
   getInit() {
-    this.resultShow = this.myservice.getDatasUniverSal('a001') ;
-    console.log('DataLoad' ,this.resultShow ) ;
+    this.resultShow  = this.myservice.getDatasUniverSal('a001') ;
+  }
+
+  getIni2() {
+    this.resultShow  = this.myservice.getDatasUniverSal2('a001').subscribe( (response:any) =>{
+      this.resultShow = response ;
+      console.log('DataLoad' ,this.resultShow ) ;
+    }) ;
+    
   }
 
   searchCategory() {
@@ -77,5 +84,11 @@ export class AppComponent  implements OnInit {
       const url2 = 'https://lovetoshopmall.com/testcors.php?categoryCode='+this.categoryName;
       this.myservice.InsertDatas(this.categoryData).subscribe((response:any)=>{
     }) ;
+  }
+
+  testSearch() {
+    this.myservice.search('K')
+   
+
   }
 }

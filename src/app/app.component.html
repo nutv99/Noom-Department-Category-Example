@@ -3,12 +3,13 @@
 
 <button (click)="getInit()">Get Depart Data</button>
 
-{{ departmentData | json }}
-<div *ngFor="let item of departmentData | keyvalue">
+<!-- {{ departmentData | json }} -->
+<!-- <div *ngFor="let item of departmentData | keyvalue">
   {{item | json }}
   
-</div> 
-<button (click)="saveDataToDB()">Save </button>
+</div>  -->
+{{ resultShow | json}}
+<button (click)="testSearch()">Search RX </button>
 <hr>
 <table border="1" style="width:100%">
   <tr>
@@ -42,6 +43,8 @@
       </option>
     </select></td>
   </tr>
-</table>
+</table> 
+
+ 
 
 <!-- {{ resultShow |json}} -->
