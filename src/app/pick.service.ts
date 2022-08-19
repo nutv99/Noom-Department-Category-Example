@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 @Injectable({  providedIn: 'root' })
 export class MyHttpService {
 
+  Response:any ; 
   constructor(private http:HttpClient) { }
 
   public getDatas(): Observable<any> {
@@ -42,6 +43,20 @@ export class MyHttpService {
  
     return this.http.delete<any>(url,dataPost);
   }
+
+  public getDatasUniverSal(pagecode:string): Observable<any> {
+    //const url = 'https://lovetoshopmall.com/dataservice/getDataUniverSal.php?pagecode='+ pagecode ;
+    const url = 'https://lovetoshopmall.com/dataservice/categoryTest.php?pagecode='+ pagecode ;
+    this.http.get<any>(url).subscribe((response:any)=>{
+        this.Response = response ;
+        console.log('From BAck',this.Response)
+        return this.Response ;
+    });
+
+    return this.Response ;
+ 
+    
+   }
 
 
 }

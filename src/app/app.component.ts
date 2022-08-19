@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, OnInit,VERSION } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
@@ -13,7 +13,7 @@ import { MyHttpService } from './pick.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent  implements OnInit {
   departmentData = [
     { categorycode: 'A1', categoryDesc: 'นาฬิกาผู้หญิง' },
     { categorycode: 'A2', categoryDesc: 'นาฬิกาผู้ชาย' },
@@ -30,8 +30,17 @@ export class AppComponent {
   resultShow: any = '';
 
   constructor(public myservice: MyHttpService,private http:HttpClient) {}
+  ngOnInit() {
+    // this.resultShow = this.myservice.getDatasUniverSal('a001') ;
+    // console.log('DataLoad' ,this.resultShow ) ;
+  }
 
-  name = 'Angular ' + VERSION.major;
+  name = 'Angular ' + VERSION.major; 
+
+  getInit() {
+    this.resultShow = this.myservice.getDatasUniverSal('a001') ;
+    console.log('DataLoad' ,this.resultShow ) ;
+  }
 
   searchCategory() {
     //alert(this.departmentName)

@@ -1,6 +1,8 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 
+<button (click)="getInit()">Get Depart Data</button>
+
 {{ departmentData | json }}
 <div *ngFor="let item of departmentData | keyvalue">
   {{item | json }}
