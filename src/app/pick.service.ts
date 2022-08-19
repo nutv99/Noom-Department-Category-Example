@@ -79,11 +79,8 @@ export class MyHttpService {
         console.log('From BAck',this.Response)
         return this.Response ;
      }
-    );
-
-    return this.Response ;
- 
-    
+    );       
+    return this.Response ; 
    }
 
    public getDatasUniverSal2(pagecode:string): Observable<any> {
