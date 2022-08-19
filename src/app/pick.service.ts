@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
+
 import {
   map,
   debounceTime,
@@ -7,8 +7,12 @@ import {
   switchMap,
   tap
 } from "rxjs/operators";
+
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import {
   HttpClient,
+  HttpHeaders,
   HttpEvent,
   HttpParams,
   HttpResponse,
@@ -40,9 +44,14 @@ export class MyHttpService {
   }
 
   public InsertDatas(dataPost:any): Observable<any> {
+
     const url = 'https://reqres.in/api/users?page=1';
+    let httpOptions = {
+     headers: new HttpHeaders({ 'Content-Type': 'application/json',
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTU0NzE5MjMsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzQxIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNDEifQ.FdHX7Ycs_Z5zwAQkRD9iyVRPsgS42QqC8yQ9EKYnVC4' })
+    };
  
-     return this.http.post<any>(url,dataPost);
+     return this.http.post<any>(url,dataPost,httpOptions);
   }
 
   public UpdateDatas(dataPost:any): Observable<any> {
