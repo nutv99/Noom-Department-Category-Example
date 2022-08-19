@@ -89,8 +89,6 @@ export class MyHttpService {
     return this.http.get<any>(url) ;
 
     
- 
-    
    }
 
    search(term: string): Observable<SearchItem[]> {
