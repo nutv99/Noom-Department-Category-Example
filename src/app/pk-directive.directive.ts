@@ -7,16 +7,18 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 export class PkDirective {
 
 
-@Input() myurl = '';
+@Input() myurlcode = '';
 @Output() appPkDirective = new EventEmitter()
 
   constructor(private http:HttpClient,private elementRef: ElementRef) {
     
   }
   @HostListener('input',['$event']) loadDepartment(event:any) {    
-    console.log('My URL ',this.myurl) ;
+    console.log('My URL ',this.myurlcode) ;
     const inputTextElement :HTMLInputElement = event.target ;  
-    this.http.get<any>('https://www.anapioficeandfire.com/api/books?name='+ inputTextElement.value)
+    // this.http.get<any>('https://www.anapioficeandfire.com/api/books?name='+ inputTextElement.value)
+    // .subscribe(response => this.appPkDirective.emit(response)) ;
+    this.http.get<any>('https://www.lovetoshopmall.com/dataservice/api.php?formcode='+ this.myurlcode+ '&payload='+ inputTextElement.value)
     .subscribe(response => this.appPkDirective.emit(response)) ;
     
   }

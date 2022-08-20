@@ -4,7 +4,7 @@
 <!-- <input (appPkDirective)="resultShow = $event" type="text" > -->
 <button (click)="getInit()">Get Depart Data</button>
 
-<input (appPkDirective)="resultShow = $event"  [myurl]="'lightcyan'"  type="text" >
+<input (appPkDirective)="resultShow = $event"  [myurlcode]="'categorymaster'"  type="text" >
 <!-- {{ departmentData | json }} -->
 <!-- <div *ngFor="let item of departmentData | keyvalue">
   {{item | json }}
@@ -52,7 +52,7 @@
 <table border=1 width=100%>
 
   <tr *ngFor ="let d of resultShow">
-   <td>{{d.mainImageURL}}</td>
+   <td>{{d.categoryDesc}}</td>
   </tr>
 
 </table>

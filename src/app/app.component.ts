@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 
 import { User, UserInformation } from './user';
 import { MyHttpService } from './pick.service'; 
-
+import { categorymaster, categorymaster_PK }  from './model' ;
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -23,7 +23,12 @@ export interface PeriodicElement {
 
 
 
-export class AppComponent  implements OnInit {
+export class AppComponent  implements OnInit { 
+
+  categoryModel : categorymaster ;
+  categoryModelPK : categorymaster_PK ;
+
+
   departmentData = [
     { categorycode: 'A1', categoryDesc: 'นาฬิกาผู้หญิง' },
     { categorycode: 'A2', categoryDesc: 'นาฬิกาผู้ชาย' },
