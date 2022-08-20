@@ -6,12 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import {MyHttpService} from './pick.service' ;
-
+import {PkDirective} from './pk-directive.directive' ;
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,HttpClientModule ],
   providers: [MyHttpService],
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent, HelloComponent,PkDirective],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

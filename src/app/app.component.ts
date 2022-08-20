@@ -120,4 +120,15 @@ export class AppComponent  implements OnInit {
    
 
   }
+
+  // loadDepartment(event : any) {
+  //   const inputTextElement :HTMLInputElement = event.target ;
+  //   console.log(inputTextElement.value);
+  //   this.http.get<any>('https://www.anapioficeandfire.com/api/books?name='+ inputTextElement.value).subscribe(response => this.resultShow = response) ;
+  //   // this.http.get<any>('https://www.anapioficeandfire.com/api/books').subscribe(response => this.resultShow = response) ;
+
+  //   //A Game of Thrones
+
+
+  // }
 }
