@@ -1,10 +1,10 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 
-<input (appPkDirective)="resultShow = $event" type="text" >
+<!-- <input (appPkDirective)="resultShow = $event" type="text" > -->
 <button (click)="getInit()">Get Depart Data</button>
 
-<input (appPkDirective)="resultShow = $event" [url]="lightcyan"  type="text" >
+<input (appPkDirective)="resultShow = $event"  [myurl]="'lightcyan'"  type="text" >
 <!-- {{ departmentData | json }} -->
 <!-- <div *ngFor="let item of departmentData | keyvalue">
   {{item | json }}
