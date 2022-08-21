@@ -3,7 +3,7 @@ import { MyHttpService} from '../pick.service' ;
 import { Subscription,Subject, switchMap, debounceTime,pipe } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import  data from '../asset/itemmaster.json' ;
+
 
 interface City {
   name: string,
@@ -19,7 +19,9 @@ interface City {
 export class ItemFormComponent implements OnInit {
 value1:string = '';
 subscription?: Subscription;
-ItemMaster?:  any  = data;
+ItemMaster?:  any ; 
+
+TableList : string[] = ['ItemMaster','department'] ;
 
 onSearchDataSwitchMap = new Subject<string>();
 
@@ -48,10 +50,10 @@ constructor(private myservice:MyHttpService,private http: HttpClient) {
  
 
 ngOnInit() {
-  this.http.get('../asset/itemmaster.json').subscribe(data => {
-    this.ItemMaster = data; 
-    console.log('Item',data)
-  });
+  let Data1 = this.myservice.getDatasUniverSal(this.TableList[0]) ;
+  console.log('Data1',Data1) ;
+  let Data2 = this.myservice.getDatasUniverSal(this.TableList[1]) ;
+  console.log('Data2',Data2) ;
   
 }
 
