@@ -1,9 +1,116 @@
-<p>item-form works!</p>
-<div class="p-fluid grid">
-  <div class="field col-12 md:col-4">
-      <span class="p-float-label">
-          <input type="text" id="inputtext" pInputText [(ngModel)]="value1"> 
-          <label for="inputtext">InputText</label>
-      </span>
-  </div>
-</div>  
+
+<div class="p-fluid grid"> 
+   <div class="field col-12 md:col-4">   
+<span class="p-float-label p-input-icon-right">   <i class="pi pi-search"></i>      
+  <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" optionDisabled="inactive"></p-dropdown>
+    <label for="float-input">รหัสสินค้า</label> 
+</span>
+   </div>
+</div>   
+
+
+<h6>รหัสร้านค้า</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label"><p-inputMask inputId="inputmask" mask="99/99/9999"  [(ngModel)]="value1"></p-inputMask>
+  <label for="inputmask">รหัสร้านค้า</label>>   <label for="float-input">รหัสร้านค้า</label>  </span>
+</div>
+</div>   
+<h6>รหัสสินค้า</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label p-input-icon-right">   <i class="pi pi-search"></i>       <input type="text" id="inputtext" pInputText >   <label for="float-input">รหัสสินค้า</label>  </span>
+</div>
+</div>   
+<h6>URL ของสินค้าตัวนี้ จากร้านค้า</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">URL ของสินค้าตัวนี้ จากร้านค้า</label>  </span>
+</div>
+</div>   
+<h6>isWork</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">isWork</label>  </span>
+</div>
+</div>   
+<h6>รหัสแผนก</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">รหัสแผนก</label>  </span>
+</div>
+</div>   
+<h6>รหัสกลุ่ม</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">รหัสกลุ่ม</label>  </span>
+</div>
+</div>   
+<h6>groupcode</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">groupcode</label>  </span>
+</div>
+</div>   
+<h6>URL ของสินค้าตัวนี้</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">URL ของสินค้าตัวนี้</label>  </span>
+</div>
+</div>   
+<h6>ชื่อสินค้า</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">ชื่อสินค้า</label>  </span>
+</div>
+</div>   
+<h6>ItemNameShort</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">ItemNameShort</label>  </span>
+</div>
+</div>   
+<h6>ราคาเต็ม</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">ราคาเต็ม</label>  </span>
+</div>
+</div>   
+<h6>ส่วนลด</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">ส่วนลด</label>  </span>
+</div>
+</div>   
+<h6>ราคาขาย</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label"><p-inputNumber inputId="inputnumber" [(ngModel)]="value1"></p-inputNumber>
+  <label for="inputnumber">InputNumber</label>>   <label for="float-input">ราคาขาย</label>  </span>
+</div>
+</div>   
+<h6>NumSale</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">NumSale</label>  </span>
+</div>
+</div>   
+<h6>rating</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">rating</label>  </span>
+</div>
+</div>   
+<h6>Balance</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">Balance</label>  </span>
+</div>
+</div>   
+<h6>URL รูปหลัก</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">URL รูปหลัก</label>  </span>
+</div>
+</div>   
+<h6>subImageURL</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">subImageURL</label>  </span>
+</div>
+</div>   
+<h6>ImageListBig</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">ImageListBig</label>  </span>
+</div>
+</div>   
+<h6>ImageListThumbA</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">ImageListThumbA</label>  </span>
+</div>
+</div>   
+<h6>ImageListThumbB</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">ImageListThumbB</label>  </span>
+</div>
+</div>   
+<h6>คำบรรยาย</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">คำบรรยาย</label>  </span>
+</div>
+</div>   
+<h6>Description2</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">Description2</label>  </span>
+</div>
+</div>   
+<h6>pageDetailURL</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">pageDetailURL</label>  </span>
+</div>
+</div>   
+<h6>pageTitle</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">pageTitle</label>  </span>
+</div>
+</div>   
+<h6>pageMetaDesc</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">pageMetaDesc</label>  </span>
+</div>
+</div>   
+<h6>รหัสสินค้าของร้านค้า</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">รหัสสินค้าของร้านค้า</label>  </span>
+</div>
+</div>   
+<h6>รหัสยี่ห้อ</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label"><p-inputMask inputId="inputmask" mask="99/99/9999"  [(ngModel)]="value1"></p-inputMask>
+  <label for="inputmask">รหัสยี่ห้อ</label>>   <label for="float-input">รหัสยี่ห้อ</label>  </span>
+</div>
+</div>   
+<h6>BalanceStock</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">BalanceStock</label>  </span>
+</div>
+</div>   
+<h6>numView</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">numView</label>  </span>
+</div>
+</div>   
+<h6>จำนวนรีวิว</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">จำนวนรีวิว</label>  </span>
+</div>
+</div>   
+<h6>shipCode</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">shipCode</label>  </span>
+</div>
+</div>   
+<h6>shipFeePerPiece</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">shipFeePerPiece</label>  </span>
+</div>
+</div>   
+<h6>lastupdate</h6><div class="p-fluid grid">  <div class="field col-12 md:col-4">      <span class="p-float-label">       <input type="text" id="inputtext" pInputText >   <label for="float-input">lastupdate</label>  </span>
+</div>
+</div>   
