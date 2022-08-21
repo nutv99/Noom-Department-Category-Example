@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MyHttpService} from '../pick.service' ;
 import { Subscription,Subject, switchMap, debounceTime,pipe } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import  data from '../asset/itemmaster.json' ;
 
 interface City {
   name: string,
@@ -17,11 +19,12 @@ interface City {
 export class ItemFormComponent implements OnInit {
 value1:string = '';
 subscription?: Subscription;
+ItemMaster?:  any  = data;
 
 onSearchDataSwitchMap = new Subject<string>();
 
 
-constructor(private myservice:MyHttpService) {
+constructor(private myservice:MyHttpService,private http: HttpClient) {
 
   this.onSearchDataSwitchMap.pipe(
     debounceTime(100),
@@ -45,7 +48,10 @@ constructor(private myservice:MyHttpService) {
  
 
 ngOnInit() {
-
+  this.http.get('../asset/itemmaster.json').subscribe(data => {
+    this.ItemMaster = data; 
+    console.log('Item',data)
+  });
   
 }
 

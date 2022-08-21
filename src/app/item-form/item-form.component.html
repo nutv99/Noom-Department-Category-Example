@@ -1,8 +1,10 @@
+{{ItemMaster | json}}
 
+<hr><hr><hr><hr>
 <div class="p-fluid grid"> 
    <div class="field col-12 md:col-4">   
 <span class="p-float-label p-input-icon-right">   <i class="pi pi-search"></i>      
-  <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" optionDisabled="inactive"></p-dropdown>
+  <p-dropdown [options]="ItemMaster.categoryDesc" [(ngModel)]="selectedCity" optionLabel="name" optionDisabled="inactive"></p-dropdown>
     <label for="float-input">รหัสสินค้า</label> 
 </span>
    </div>
