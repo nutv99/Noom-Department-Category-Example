@@ -12,6 +12,7 @@ import { PrimeNGConfig } from 'primeng/api';
 import { User, UserInformation } from './user';
 import { MyHttpService } from './pick.service';
 import { categorymaster, categorymaster_PK } from './model';
+import { ItemFormComponent } from './item-form/item-form.component' ;
 
 export interface PeriodicElement {
   name: string;
