@@ -33,7 +33,9 @@ export interface Car {
 })
 export class AppComponent implements OnInit {
   categoryModel: categorymaster;
-  categoryModelPK: categorymaster_PK;
+  categoryModelPK: categorymaster_PK ;
+
+  TableList : string[]  = ['ItemMaster','Department','Category','GroupItem'] ;
 
   departmentDataA : department ;
 
@@ -81,7 +83,7 @@ export class AppComponent implements OnInit {
     private http: HttpClient,
     private primengConfig: PrimeNGConfig
   ) {}
-  
+
   ngOnInit() {
     // this.resultShow = this.myservice.getDatasUniverSal('a001') ;
     // console.log('DataLoad' ,this.resultShow ) ;
