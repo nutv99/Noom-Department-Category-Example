@@ -11,7 +11,7 @@ import { PrimeNGConfig } from 'primeng/api';
 
 import { User, UserInformation } from './user';
 import { MyHttpService } from './pick.service';
-import { categorymaster, categorymaster_PK } from './model';
+import { categorymaster, categorymaster_PK , department} from './model';
 import { ItemFormComponent } from './item-form/item-form.component' ;
 
 export interface PeriodicElement {
@@ -34,6 +34,8 @@ export interface Car {
 export class AppComponent implements OnInit {
   categoryModel: categorymaster;
   categoryModelPK: categorymaster_PK;
+
+  departmentDataA : department ;
 
   cars: Car[] = [
     { year: 1999, brand: 'toyota' },
@@ -79,6 +81,7 @@ export class AppComponent implements OnInit {
     private http: HttpClient,
     private primengConfig: PrimeNGConfig
   ) {}
+  
   ngOnInit() {
     // this.resultShow = this.myservice.getDatasUniverSal('a001') ;
     // console.log('DataLoad' ,this.resultShow ) ;

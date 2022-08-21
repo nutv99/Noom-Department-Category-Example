@@ -9,8 +9,6 @@ import { MyHttpService } from './pick.service';
 import { PkDirective } from './pk-directive.directive';
 import { TableModule } from 'primeng/table';
 import { ItemFormComponent } from './item-form/item-form.component';
-
-
 import { AutoCompleteModule } from "primeng/autocomplete";
 import { CalendarModule } from "primeng/calendar";
 import { ChipsModule } from "primeng/chips";
