@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup , Validators  } from '@angular/forms';
 import { MyHttpService } from '../pick.service';
 import {customer,customer_PK} from '../model' ;
 
@@ -24,6 +24,17 @@ export class CustomerComponent implements OnInit {
     lastName: [''],
   } 
 
+  objdepartmentForm = {
+    departmentCode: new FormControl('',[Validators.required]),
+    departmentDesc: new FormControl('',[Validators.required]),
+    faIcon: new FormControl(''),
+    imageName: new FormControl(''),
+    lang: new FormControl(''),
+    lastupdate: new FormControl(''),
+    salary: new FormControl(''),
+    updatedby: new FormControl(''),
+  }
+
   jobForm = this.fb.group(this.objForm);
 
   preview: string = '';
@@ -36,6 +47,7 @@ export class CustomerComponent implements OnInit {
   }
 
   save() {
+    console.log('Save',JSON.stringify(this.jobForm.value)) ;
     this.preview = JSON.stringify(this.jobForm.value);
   }
 
