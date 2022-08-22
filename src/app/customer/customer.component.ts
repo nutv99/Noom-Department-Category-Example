@@ -12,16 +12,19 @@ export class CustomerComponent implements OnInit {
   // Create Output Var From Model
   customerData : customer ;
   customerData_PK : customer_PK  = { "customerid" : '888'};
+
+  //expressions = require("angular-expressions");
   
 
   //customerData_PK.customerid = '999' ;
   customerid : string = '1' ;
 
-
-  jobForm = this.fb.group({
+  objForm = {
     firstName: [''],
     lastName: [''],
-  });
+  } 
+
+  jobForm = this.fb.group(this.objForm);
 
   preview: string = '';
   constructor(private fb: FormBuilder) {}
@@ -38,7 +41,8 @@ export class CustomerComponent implements OnInit {
 
   SetPK() {
     this.customerData_PK.customerid = '111777' ;    
-    this.PKChange2(this.customerData_PK.customerid)
+    this.PKChange2(this.customerData_PK.customerid);
+   
   }
 
   PKChange2(sValue) {
