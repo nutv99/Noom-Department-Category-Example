@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 // import { PrimeNGConfig } from 'primeng/api';
@@ -20,9 +21,14 @@ import { MultiSelectModule } from "primeng/multiselect";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
 
+
+import {MenuItem} from 'primeng/api';
+import {SelectItem} from 'primeng/api';
+import {SelectItemGroup} from 'primeng/api';
+
 @NgModule({
-  imports: [BrowserModule, FormsModule, HttpClientModule, TableModule,AutoCompleteModule,
-  
+  imports: [BrowserModule, BrowserAnimationsModule,FormsModule, HttpClientModule, TableModule,AutoCompleteModule,
+    
     HttpClientModule,
     CalendarModule,
     ChipsModule,
