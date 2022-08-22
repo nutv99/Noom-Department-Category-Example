@@ -25,9 +25,10 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {MenuItem} from 'primeng/api';
 import {SelectItem} from 'primeng/api';
 import {SelectItemGroup} from 'primeng/api';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import {MenubarModule} from 'primeng/menubar';
-
+import {CustomerComponent} from './customer/customer.component' ;
 
 @NgModule({
   imports: [BrowserModule, BrowserAnimationsModule,FormsModule, HttpClientModule, TableModule,AutoCompleteModule,
@@ -43,11 +44,12 @@ import {MenubarModule} from 'primeng/menubar';
     InputTextareaModule,
     InputTextModule,
     MenubarModule,
+    ReactiveFormsModule
     
     
   ],
   providers: [MyHttpService],
-  declarations: [AppComponent, HelloComponent, PkDirective, ItemFormComponent],
+  declarations: [AppComponent, HelloComponent, PkDirective, ItemFormComponent,CustomerComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
