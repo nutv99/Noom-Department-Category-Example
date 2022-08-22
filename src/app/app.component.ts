@@ -9,10 +9,15 @@ import { Observable } from 'rxjs';
 import { Table } from 'primeng/table';
 import { PrimeNGConfig } from 'primeng/api';
 
+import {MenubarModule} from 'primeng/menubar';
+import {MenuItem} from 'primeng/api';
+
 import { User, UserInformation } from './user';
 import { MyHttpService } from './pick.service';
 import { categorymaster, categorymaster_PK , department} from './model';
 import { ItemFormComponent } from './item-form/item-form.component' ;
+
+
 
 export interface PeriodicElement {
   name: string;
@@ -37,7 +42,10 @@ export class AppComponent implements OnInit {
 
   TableList : string[]  = ['ItemMaster','Department','Category','GroupItem'] ;
 
+  selectedValue: string = 'val1';
+
   departmentDataA : department ;
+  items: MenuItem[];
 
   cars: Car[] = [
     { year: 1999, brand: 'toyota' },
@@ -49,7 +57,9 @@ export class AppComponent implements OnInit {
   departmentData = [
     { categorycode: 'A1', categoryDesc: 'นาฬิกาผู้หญิง' },
     { categorycode: 'A2', categoryDesc: 'นาฬิกาผู้ชาย' },
-  ];
+  ]; 
+
+   
 
   ELEMENT_DATA: PeriodicElement[] = [
     { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
@@ -62,7 +72,9 @@ export class AppComponent implements OnInit {
     { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
     { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
     { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-  ];
+  ]; 
+
+
 
   categoryData = [];
   groupData = [];
@@ -87,7 +99,31 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     // this.resultShow = this.myservice.getDatasUniverSal('a001') ;
     // console.log('DataLoad' ,this.resultShow ) ;
-    this.getInit();
+    this.getInit(); 
+    this.items = [
+      {
+          label: 'File',
+          items: [{
+                  label: 'New', 
+                  icon: 'pi pi-fw pi-plus',
+                  items: [
+                      {label: 'Project'},
+                      {label: 'Other'},
+                  ]
+              },
+              {label: 'Open'},
+              {label: 'Quit'}
+          ]
+      },
+      {
+          label: 'Edit',
+          icon: 'pi pi-fw pi-pencil',
+          items: [
+              {label: 'Delete', icon: 'pi pi-fw pi-trash'},
+              {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+          ]
+      }
+  ];
   }
 
   name = 'Angular ' + VERSION.major;

@@ -20,11 +20,14 @@ import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
-
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 import {MenuItem} from 'primeng/api';
 import {SelectItem} from 'primeng/api';
 import {SelectItemGroup} from 'primeng/api';
+
+import {MenubarModule} from 'primeng/menubar';
+
 
 @NgModule({
   imports: [BrowserModule, BrowserAnimationsModule,FormsModule, HttpClientModule, TableModule,AutoCompleteModule,
@@ -36,9 +39,13 @@ import {SelectItemGroup} from 'primeng/api';
     InputMaskModule,
     InputNumberModule,
     CascadeSelectModule,
-    MultiSelectModule,
+    MultiSelectModule,RadioButtonModule,
     InputTextareaModule,
-    InputTextModule],
+    InputTextModule,
+    MenubarModule,
+    
+    
+  ],
   providers: [MyHttpService],
   declarations: [AppComponent, HelloComponent, PkDirective, ItemFormComponent],
   bootstrap: [AppComponent],
