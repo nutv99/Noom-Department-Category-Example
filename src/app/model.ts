@@ -1040,7 +1040,7 @@ export interface ArequestOpenShop {
   LastLogin? : Date ;
   }
   export interface customer_PK {
-  customerid? : number ;
+  customerid : string ;
   }
   
   

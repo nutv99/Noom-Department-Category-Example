@@ -4,7 +4,11 @@ customer works!
 <div class="container">
   <legend>Job Portal</legend>
   <div class="row">
-    <div class="col col-md-8" style="overflow-y: scroll; max-height: 100vh">
+    <div class="col col-md-8" style="overflow-y: scroll; max-height: 100vh"> 
+      PKFIELD :: <input type="text" #pkField [(ngModel)] = "customerData_PK.customerid" (change)= 'PKChange($event)'>
+
+      <button (click)='SetPK()'>Set PK</button>
+
       <form [formGroup]="jobForm" (ngSubmit)="save()">
         <div class="mb-3">
           <label for="firstName" class="form-label">First Name</label>
