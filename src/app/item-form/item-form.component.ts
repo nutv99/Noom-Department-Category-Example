@@ -29,7 +29,7 @@ cities: City[];
 selectedCity1: City;
 selectedCity2: City;
 selectedCity3: string;
-selectedCountry : string;
+selectedCountry : string = 'Australia';
 countries: any[];
 groupedCities: SelectItemGroup[];
 items: SelectItem[];
