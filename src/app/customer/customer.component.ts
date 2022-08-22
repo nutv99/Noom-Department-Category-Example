@@ -11,7 +11,9 @@ import {customer,customer_PK} from '../model' ;
 export class CustomerComponent implements OnInit {
   // Create Output Var From Model
   customerData : customer ;
-  customerData_PK : customer_PK  = { "customerid" : '888'};
+  customerData_PK : customer_PK  = { "customerid" : '888'}; 
+
+  resultShow:any ;
 
   //expressions = require("angular-expressions");
   
@@ -38,12 +40,17 @@ export class CustomerComponent implements OnInit {
   jobForm = this.fb.group(this.objForm);
 
   preview: string = '';
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private myservice:MyHttpService) {}
 
   ngOnInit() {
    this.customerData_PK.customerid = '777' ;    
 
 
+  }
+
+  async getData(tablename:string) {
+    this.resultShow = await this.myservice.getDatasUniverSal(tablename);
+    console.log('DataLoad By Init1', this.resultShow);
   }
 
   save() {
@@ -53,7 +60,7 @@ export class CustomerComponent implements OnInit {
 
   SetPK() {
     this.customerData_PK.customerid = '111777' ;    
-    this.PKChange2(this.customerData_PK.customerid);
+   // this.PKChange2(this.customerData_PK.customerid);
    
   }
 
