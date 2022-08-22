@@ -29,7 +29,7 @@ cities: City[];
 selectedCity1: City;
 selectedCity2: City;
 selectedCity3: string;
-selectedCountry : string = '';
+selectedCountry : string;
 countries: any[];
 groupedCities: SelectItemGroup[];
 items: SelectItem[];
@@ -88,16 +88,16 @@ constructor() {
   ];
 
   this.countries = [
-      {cname: 'Australia', code: 'AU'},
-      {cname: 'Brazil', code: 'BR'},
-      {cname: 'China', code: 'CN'},
-      {cname: 'Egypt', code: 'EG'},
-      {cname: 'France', code: 'FR'},
-      {cname: 'Germany', code: 'DE'},
-      {cname: 'India', code: 'IN'},
-      {cname: 'Japan', code: 'JP'},
-      {cname: 'Spain', code: 'ES'},
-      {cname: 'United States', code: 'US'}
+      {name: 'Australia', code: 'AU'},
+      {name: 'Brazil', code: 'BR'},
+      {name: 'China', code: 'CN'},
+      {name: 'Egypt', code: 'EG'},
+      {name: 'France', code: 'FR'},
+      {name: 'Germany', code: 'DE'},
+      {name: 'India', code: 'IN'},
+      {name: 'Japan', code: 'JP'},
+      {name: 'Spain', code: 'ES'},
+      {name: 'United States', code: 'US'}
   ];
 }
 

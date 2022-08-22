@@ -1,26 +1,22 @@
 <!-- {{ Data1 | json }} -->
 {{ Data2 | json }}
 
-<hr />
-<hr />
-<hr />
-<hr />
 
 <h5>Single</h5>
 <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name"
 	[showClear]="true"></p-dropdown> 
 
   <h5>Advanced with Templating, Filtering and Clear Icon</h5>
-<p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="cname"
+<p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name"
 	[showClear]="true" placeholder="Select a Country">
 	<ng-template pTemplate="selectedItem">
 		<div class="country-item country-item-value" *ngIf="selectedCountry">
-			<div>{{selectedCountry.cname}}</div>
+			<div>{{selectedCountry}}</div>
 		</div>
 	</ng-template>
 	<ng-template let-country pTemplate="item">
 		<div class="country-item">
-			<div>{{country.cname}}</div>
+			<div>{{country.name}}</div>
 		</div>
 	</ng-template>
 </p-dropdown>
