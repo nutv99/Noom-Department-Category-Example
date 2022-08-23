@@ -52,8 +52,14 @@ export class CustomerComponent implements OnInit {
   ngOnInit() {
    this.customerData_PK.customerid = '777' ;    
 
+   this.jobForm.statusChanges.subscribe(x => {
+    alert(x);
+  })
+
 
   }
+
+  
 
   async getDataA(tablename:string) {
     this.AresultShow = {} ;
@@ -61,37 +67,37 @@ export class CustomerComponent implements OnInit {
     console.log('DataLoad By Init1', this.AresultShow);
   }
 
- getDataDepartment900() {
-   this.myservice.getAllDepartment('department')
-   .pipe(
-    finalize(() => {
-      this.isLoading = false;
-      alert('Yes') ;
-    })
-   )
-   .subscribe({
-    next: (data) => {
-      this.AresultShow = data;
-    },
-    error: (e) => {      
-      alert('Error while loading the product data');
-    } ,
-    complete: () => console.log('done')
-  })
- } 
+//  getDataDepartment900() {
+//    this.myservice.getAllDepartment('department')
+//    .pipe(
+//     finalize(() => {
+//       this.isLoading = false;
+//       alert('Yes') ;
+//     })
+//    )
+//    .subscribe({
+//     next: (data) => {
+//       this.AresultShow = data;
+//     },
+//     error: (e) => {      
+//       alert('Error while loading the product data');
+//     } ,
+//     complete: () => console.log('done')
+//   })
+//  } 
 
- getDataDepartment999() {
-  this.myservice.getAllDepartment('department')   
-  .subscribe({
-   next: (data) => {
-     this.AresultShow = data;
-   },
-   error: (e) => {      
-     alert('Error while loading the product data');
-   } ,
-   complete: () => console.log('done')
- })
-} 
+//  getDataDepartment999() {
+//   this.myservice.getAllDepartment('department')   
+//   .subscribe({
+//    next: (data) => {
+//      this.AresultShow = data;
+//    },
+//    error: (e) => {      
+//      alert('Error while loading the product data');
+//    } ,
+//    complete: () => console.log('done')
+//  })
+// } 
 
 
   save() {
