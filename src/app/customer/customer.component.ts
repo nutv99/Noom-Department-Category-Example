@@ -61,7 +61,7 @@ export class CustomerComponent implements OnInit {
     console.log('DataLoad By Init1', this.AresultShow);
   }
 
- getDataDepartment999() {
+ getDataDepartment900() {
    this.myservice.getAllDepartment('department')
    .pipe(
     finalize(() => {
@@ -79,6 +79,26 @@ export class CustomerComponent implements OnInit {
     complete: () => console.log('done')
   })
  } 
+
+ getDataDepartment999() {
+  this.myservice.getAllDepartment('department')
+  .pipe(
+   finalize(() => {
+     this.isLoading = false;
+     alert('Yes') ;
+   })
+  )
+  .subscribe({
+   next: (data) => {
+     this.AresultShow = data;
+   },
+   error: (e) => {      
+     alert('Error while loading the product data');
+   } ,
+   complete: () => console.log('done')
+ })
+} 
+
 
   save() {
     console.log('Save',JSON.stringify(this.jobForm.value)) ;

@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-
+import { Observable, throwError } from 'rxjs';
 import {
   map,
   debounceTime,
   distinctUntilChanged,
   switchMap,
-  tap,
+  tap,catchError, finalize
 } from 'rxjs/operators';
 
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+
+
+
 import {
   HttpClient,
   HttpHeaders,
@@ -105,6 +106,18 @@ export class MyHttpService {
       'https://lovetoshopmall.com/dataservice/categoryTest.php?pagecode=' +
       pagecode;
      return this.http.get<any>(url);
+  
+  }
+
+  public  getAllDepartment999(pagecode:string) : Observable<any> {
+    const url =
+      'https://lovetoshopmall.com/dataservice/categoryTest.php?pagecode=' +
+      pagecode;
+     return this.http.get<any>(url).pipe(
+      finalize(() => {        
+        alert('Yes') ;
+      })
+     )
   
   }
 
