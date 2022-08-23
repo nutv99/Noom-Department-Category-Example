@@ -25,5 +25,5 @@
     </div>
   </div>
 
-  <button type="submit" class="btn-block btn-primary">Submit</button>
+  <button type="submit" [disabled]="!jobForm.valid" class="btn-block btn-primary">Submit</button>
 </form>
