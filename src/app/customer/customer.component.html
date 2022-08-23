@@ -1,37 +1,27 @@
-<form [formGroup]="form_ItemMaster">
-  <h6>รหัสสินค้า</h6>
-  <div class="p-fluid grid">
-    <div class="field col-12 md:col-4">
-      <span class="p-float-label p-input-icon-right">
-        <i class="pi pi-search"></i>
-        <input type="text" id="inputtext" pInputText  formControlName="fullname"/>
-        <label for="float-input">รหัสสินค้า</label>
-      </span>
-    </div>
-  </div>
-  <h6>รหัสร้านค้า</h6>
-  <div class="p-fluid grid">
-    <div class="field col-12 md:col-4">
-      <span class="p-float-label"
-        ><p-inputMask
-          inputId="inputmask"
-          mask="99/99/9999"
-          [(ngModel)]="value1"
-        ></p-inputMask>
-        <label for="inputmask">รหัสร้านค้า</label>>
-        <label for="float-input">รหัสร้านค้า</label>
-      </span>
-    </div>
-  </div>
+<form [formGroup]="jobForm">
   <div class="p-fluid grid">
     <div class="field col-12 md:col-12">
       <label style="margin-bottom:8px" for="inputmask"
         >URL ของสินค้าตัวนี้ จากร้านค้า</label
       >
-      <input type="text" id="inputtext" pInputText #FieldText />
-      <div *ngIf="(name.dirty || name.touched) && name.errors?.['required']">
-        ต้องป้อนค่า URL ของสินค้าตัวนี้ จากร้านค้า
-      </div>
+      <input
+        type="text"
+        id="inputtext"
+        pInputText
+        #categoryCode
+        formControlName="categoryCode"
+      />
+
+      <span
+        *ngIf="
+          jobForm.get('categoryCode')?.invalid &&
+          jobForm.controls['categoryCode'].dirty &&
+          jobForm.controls['categoryCode'].touched
+        "
+        class="p-error"
+      >
+        ต้องป้อน ชื่อลูกค้า
+      </span>
     </div>
   </div>
 </form>
