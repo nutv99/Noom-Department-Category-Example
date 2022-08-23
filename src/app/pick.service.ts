@@ -74,9 +74,9 @@ export class MyHttpService {
 
   public getDatasUniverSal(pagecode: string): Observable<any> {
     //const url = 'https://lovetoshopmall.com/dataservice/getDataUniverSal.php?pagecode='+ pagecode ;
+    
     const url =
-      'https://lovetoshopmall.com/dataservice/categoryTest.php?pagecode=' +
-      pagecode;
+      'https://lovetoshopmall.com/dataservice/categoryTest.php?pagecode=' +pagecode;
     this.http.get<any>(url).subscribe((response: any) => {
       this.Response = response;
       console.log('From BAck', this.Response);
@@ -98,6 +98,14 @@ export class MyHttpService {
       'https://pokeapi.co/api/v2/pokemon/ditto?pagecode=' +
       pagecode;
     return this.http.get<any>(url);
+  } 
+
+  public  getAllDepartment(pagecode:string) : Observable<any> {
+    const url =
+      'https://lovetoshopmall.com/dataservice/categoryTest.php?pagecode=' +
+      pagecode;
+     return this.http.get<any>(url);
+  
   }
 
   search(term: string): Observable<SearchItem[]> {
@@ -119,4 +127,7 @@ export class MyHttpService {
       })
     );
   }
+
+
+
 }

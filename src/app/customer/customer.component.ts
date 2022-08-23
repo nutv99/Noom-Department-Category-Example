@@ -3,6 +3,11 @@ import { FormBuilder, FormControl, FormGroup , Validators  } from '@angular/form
 import { MyHttpService } from '../pick.service';
 import {customer,customer_PK} from '../model' ;
 
+import { Subject, throwError } from 'rxjs';
+import { catchError, finalize, tap } from 'rxjs/operators';
+
+
+
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -14,12 +19,14 @@ export class CustomerComponent implements OnInit {
   customerData_PK : customer_PK  = { "customerid" : '888'}; 
 
   resultShow:any ;
+  AresultShow:any = {};
 
   //expressions = require("angular-expressions");
   
 
   //customerData_PK.customerid = '999' ;
-  customerid : string = '1' ;
+  customerid : string = '1' ; 
+  isLoading :any ;
 
   objForm = {
     firstName: [''],
@@ -48,10 +55,30 @@ export class CustomerComponent implements OnInit {
 
   }
 
-  async getData(tablename:string) {
-    this.resultShow = await this.myservice.getDatasUniverSal(tablename);
-    console.log('DataLoad By Init1', this.resultShow);
+  async getDataA(tablename:string) {
+    this.AresultShow = {} ;
+    this.AresultShow = await this.myservice.getDatasUniverSal(tablename);
+    console.log('DataLoad By Init1', this.AresultShow);
   }
+
+ getDataDepartment999() {
+   this.myservice.getAllDepartment('department')
+   .pipe(
+    finalize(() => {
+      this.isLoading = false;
+    })
+   )
+   .subscribe({
+    next: (data) => 
+    {
+      this.AresultShow = data;
+    },
+    error: (e) => 
+    {      
+      alert('Error while loading the product data');
+    }      
+  })
+ } 
 
   save() {
     console.log('Save',JSON.stringify(this.jobForm.value)) ;
