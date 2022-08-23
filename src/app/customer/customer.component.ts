@@ -81,13 +81,7 @@ export class CustomerComponent implements OnInit {
  } 
 
  getDataDepartment999() {
-  this.myservice.getAllDepartment('department')
-  .pipe(
-   finalize(() => {
-     this.isLoading = false;
-     alert('Yes') ;
-   })
-  )
+  this.myservice.getAllDepartment('department')   
   .subscribe({
    next: (data) => {
      this.AresultShow = data;

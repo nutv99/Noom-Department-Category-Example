@@ -94,12 +94,7 @@ export class MyHttpService {
     return this.http.get<any>(url);
   }
 
-  public getDatasUniverSal3(pagecode: string): Observable<any> {
-    const url =
-      'https://pokeapi.co/api/v2/pokemon/ditto?pagecode=' +
-      pagecode;
-    return this.http.get<any>(url);
-  } 
+   
 
   public  getAllDepartment(pagecode:string) : Observable<any> {
     const url =
@@ -115,7 +110,7 @@ export class MyHttpService {
       pagecode;
      return this.http.get<any>(url).pipe(
       finalize(() => {        
-        alert('Yes') ;
+        alert('PIPe Yes ') ;
       })
      )
   
