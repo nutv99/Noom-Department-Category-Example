@@ -1,4 +1,4 @@
-<form [formGroup]="jobForm">
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()" >
   <div class="p-fluid grid">
     <div class="field col-12 md:col-12">
       <label style="margin-bottom:8px" for="inputmask"
@@ -24,4 +24,6 @@
       </span>
     </div>
   </div>
+
+  <button type="submit" class="btn-block btn-primary">Submit</button>
 </form>
