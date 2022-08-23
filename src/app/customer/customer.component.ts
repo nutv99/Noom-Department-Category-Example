@@ -66,17 +66,17 @@ export class CustomerComponent implements OnInit {
    .pipe(
     finalize(() => {
       this.isLoading = false;
+      alert('Yes') ;
     })
    )
    .subscribe({
-    next: (data) => 
-    {
+    next: (data) => {
       this.AresultShow = data;
     },
-    error: (e) => 
-    {      
+    error: (e) => {      
       alert('Error while loading the product data');
-    }      
+    } ,
+    complete: () => console.log('done')
   })
  } 
 
