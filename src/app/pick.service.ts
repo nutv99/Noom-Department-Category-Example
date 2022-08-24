@@ -38,7 +38,7 @@ export class MyHttpService {
   constructor(private http: HttpClient) {}
 
   public getAlls(pagecode:string): Observable<any> {
-    const url = this.apiRoot + pagecode;   
+    const url = this.apiRoot+ '?pagecode=' + pagecode;   
     return this.http.get<any>(url) ;
   }
 

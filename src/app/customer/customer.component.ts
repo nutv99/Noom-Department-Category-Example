@@ -8,7 +8,12 @@ import {
   FormGroup,
   Validators,
   FormControl,
-} from '@angular/forms';
+} from '@angular/forms'; 
+
+import {MenuItem} from 'primeng/api';
+import {SelectItem} from 'primeng/api';
+import {SelectItemGroup} from 'primeng/api';
+import {ListboxFilterOptions} from 'primeng/listbox';
 
 import { Subject, throwError } from 'rxjs';
 import { catchError, finalize, tap } from 'rxjs/operators';
@@ -22,6 +27,8 @@ export class CustomerComponent implements OnInit {
   // Create Output Var From Model
   customerData: customer;
   customerData_PK: customer_PK = { customerid: '888' };
+  departmentData: any; 
+  selectdepartmentCode:string ;
 
   resultShow: any;
   AresultShow: any = {};
@@ -131,10 +138,28 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit() {
     this.customerData_PK.customerid = '777';
-    console.log(GlobalConstants.apiURL);
+
     this.jobForm.statusChanges.subscribe((x) => {
       //alert(x);
     });
+
+    this.myservice
+      .getAlls('department')
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+          alert('Yes');
+        })
+      )
+      .subscribe({
+        next: (data) => {
+          this.departmentData = data;
+        },
+        error: (e) => {
+          alert('Error while loading the data');
+        },
+        complete: () => console.log('done'),
+      });
   }
 
   async getDataA(tablename: string) {

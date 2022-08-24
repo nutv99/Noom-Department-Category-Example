@@ -1,4 +1,8 @@
 <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" >
+
+  <p-listbox [options]="departmentData" [(ngModel)]="selectdepartmentCode" optionLabel="name" optionValue="departmentCode"></p-listbox>
+
+
   <div class="p-fluid grid">
     <div class="field col-12 md:col-12">
       <label style="margin-bottom:8px" for="inputmask"
