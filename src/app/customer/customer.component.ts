@@ -89,6 +89,43 @@ export class CustomerComponent implements OnInit {
     categoryCode: new FormControl('', [Validators.required]),
   });
 
+  form_ItemMaster = this.fb.group({
+    Balance: new FormControl(null),
+    BalanceStock: new FormControl(null),
+    BrandID: new FormControl(null),
+    categoryCode: new FormControl(null, [Validators.required]),
+    departmentCode: new FormControl(null, [Validators.required]),
+    Description: new FormControl(null),
+    Description2: new FormControl(null),
+    discount: new FormControl(null),
+    fullPrice: new FormControl(null),
+    groupcode: new FormControl(null),
+    ImageListBig: new FormControl(null),
+    ImageListThumbA: new FormControl(null),
+    ImageListThumbB: new FormControl(null),
+    isWork: new FormControl(null, [Validators.required]),
+    ItemCode: new FormControl(null, [Validators.required]),
+    ItemName: new FormControl(null),
+    ItemNameShort: new FormControl(null),
+    ItemNameURL: new FormControl(null),
+    ItemShopCode: new FormControl(null),
+    ItemShopURL: new FormControl(null, [Validators.required]),
+    lastupdate: new FormControl(null),
+    mainImageURL: new FormControl(null),
+    numReview: new FormControl(null),
+    NumSale: new FormControl(null),
+    numView: new FormControl(null),
+    pageDetailURL: new FormControl(null),
+    pageMetaDesc: new FormControl(null),
+    pageTitle: new FormControl(null),
+    rating: new FormControl(null),
+    SellPrice: new FormControl(null),
+    shipCode: new FormControl(null),
+    shipFeePerPiece: new FormControl(null),
+    ShopCode: new FormControl(null, [Validators.required]),
+    subImageURL: new FormControl(null),
+  });
+
   preview: string = '';
   constructor(private fb: FormBuilder, private myservice: MyHttpService) {}
 
