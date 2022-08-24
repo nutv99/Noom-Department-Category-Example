@@ -8,15 +8,20 @@ import {
   FormGroup,
   Validators,
   FormControl,
-} from '@angular/forms'; 
+} from '@angular/forms';
 
-import {MenuItem} from 'primeng/api';
-import {SelectItem} from 'primeng/api';
-import {SelectItemGroup} from 'primeng/api';
-import {ListboxFilterOptions} from 'primeng/listbox';
+import { MenuItem } from 'primeng/api';
+import { SelectItem } from 'primeng/api';
+import { SelectItemGroup } from 'primeng/api';
+import { ListboxFilterOptions } from 'primeng/listbox';
 
 import { Subject, throwError } from 'rxjs';
 import { catchError, finalize, tap } from 'rxjs/operators';
+
+interface City {
+  name: string;
+  code: string;
+}
 
 @Component({
   selector: 'app-customer',
@@ -27,8 +32,8 @@ export class CustomerComponent implements OnInit {
   // Create Output Var From Model
   customerData: customer;
   customerData_PK: customer_PK = { customerid: '888' };
-  departmentData: any; 
-  selectdepartmentCode:string ;
+  departmentData: any;
+  selectdepartmentCode: string;
 
   resultShow: any;
   AresultShow: any = {};
@@ -38,6 +43,9 @@ export class CustomerComponent implements OnInit {
   //customerData_PK.customerid = '999' ;
   customerid: string = '1';
   isLoading: any;
+
+  cities: City[];
+  selectedCity1: City;
 
   objForm = {
     firstName: [''],
@@ -134,7 +142,15 @@ export class CustomerComponent implements OnInit {
   });
 
   preview: string = '';
-  constructor(private fb: FormBuilder, private myservice: MyHttpService) {}
+  constructor(private fb: FormBuilder, private myservice: MyHttpService) {
+    this.cities = [
+      { name: 'New York', code: 'NY' },
+      { name: 'Rome', code: 'RM' },
+      { name: 'London', code: 'LDN' },
+      { name: 'Istanbul', code: 'IST' },
+      { name: 'Paris', code: 'PRS' },
+    ];
+  }
 
   ngOnInit() {
     this.customerData_PK.customerid = '777';

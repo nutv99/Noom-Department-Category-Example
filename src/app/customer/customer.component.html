@@ -1,7 +1,11 @@
-<form [formGroup]="jobForm" (ngSubmit)="onSubmit()" >
-
-  <p-listbox [options]="departmentData" [(ngModel)]="selectdepartmentCode" optionLabel="name" optionValue="departmentCode"></p-listbox>
-
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+  
+  <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name"
+	[showClear]="true"></p-dropdown> 
+  
+  <!--   
+  <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name"
+	[showClear]="true"></p-dropdown>  -->
 
   <div class="p-fluid grid">
     <div class="field col-12 md:col-12">
@@ -11,7 +15,7 @@
       <input
         type="text"
         id="inputtext"
-        pInputText      
+        pInputText
         formControlName="categoryCode"
       />
 
@@ -28,5 +32,11 @@
     </div>
   </div>
 
-  <button type="submit" [disabled]="!jobForm.valid" class="btn-block btn-primary">Submit</button>
+  <button
+    type="submit"
+    [disabled]="!jobForm.valid"
+    class="btn-block btn-primary"
+  >
+    Submit
+  </button>
 </form>
