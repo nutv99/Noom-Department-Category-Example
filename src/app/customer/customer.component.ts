@@ -187,6 +187,7 @@ export class CustomerComponent implements OnInit {
   } 
 
  getCategory() {
+  alert(this.selectedCity1)  ;
   let params = 'parentcode=' + this.selectedCity1 ;
   this.myservice
   .getByCondition('category',params)
