@@ -131,7 +131,7 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit() {
     this.customerData_PK.customerid = '777';
-
+    console.log(GlobalConstants.apiURL);
     this.jobForm.statusChanges.subscribe((x) => {
       //alert(x);
     });

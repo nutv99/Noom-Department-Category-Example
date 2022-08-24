@@ -8,7 +8,7 @@ import {
   tap,catchError, finalize
 } from 'rxjs/operators';
 
-
+import{ GlobalConstants } from './global-const';
 
 
 import {
@@ -32,10 +32,15 @@ class SearchItem {
 
 @Injectable({ providedIn: 'root' })
 export class MyHttpService {
-  apiRoot: string = 'https://itunes.apple.com/search';
+  apiRoot: string = GlobalConstants.apiURL;
 
   Response: any;
   constructor(private http: HttpClient) {}
+
+  public getAlls(pagecode:string): Observable<any> {
+    const url = this.apiRoot + pagecode;   
+    return this.http.get<any>(url) ;
+  }
 
   public getDatas(): Observable<any> {
     const url = 'https://reqres.in/api/users?page=1';
