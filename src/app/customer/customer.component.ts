@@ -44,8 +44,11 @@ export class CustomerComponent implements OnInit {
   customerid: string = '1';
   isLoading: any;
 
-  cities: City[];
+  cities: any;
   selectedCity1: City;
+
+  department: any;
+  selectedDepartment: any;
 
   objForm = {
     firstName: [''],
@@ -143,13 +146,13 @@ export class CustomerComponent implements OnInit {
 
   preview: string = '';
   constructor(private fb: FormBuilder, private myservice: MyHttpService) {
-    this.cities = [
-      { name: 'New York', code: 'NY' },
-      { name: 'Rome', code: 'RM' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Paris', code: 'PRS' },
-    ];
+    // this.department = [
+    //   { name: 'New York', code: 'NY' },
+    //   { name: 'Rome', code: 'RM' },
+    //   { name: 'London', code: 'LDN' },
+    //   { name: 'Istanbul', code: 'IST' },
+    //   { name: 'Paris', code: 'PRS' },
+    // ];
   }
 
   ngOnInit() {
@@ -169,7 +172,7 @@ export class CustomerComponent implements OnInit {
       )
       .subscribe({
         next: (data) => {
-          this.departmentData = data;
+          this.department = data;
         },
         error: (e) => {
           alert('Error while loading the data');

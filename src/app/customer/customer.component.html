@@ -1,13 +1,18 @@
 <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
-  
-  <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name"
-	[showClear]="true"></p-dropdown> 
-  
+  <p-dropdown
+    [options]="department"
+    [(ngModel)]="selectedCity1"
+    optionLabel="name"
+    optionValue="name"
+    [showClear]="true"
+    >AAAA</p-dropdown
+  >
+  Select {{ selectedCity1 }}
   <!--   
   <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name"
 	[showClear]="true"></p-dropdown>  -->
 
-  <div class="p-fluid grid">
+  <div class="p-fluid grid" style="margin-top:40px">
     <div class="field col-12 md:col-12">
       <label style="margin-bottom:8px" for="inputmask"
         >URL ของสินค้าตัวนี้ จากร้านค้า</label
