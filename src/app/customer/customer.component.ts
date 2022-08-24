@@ -48,7 +48,12 @@ export class CustomerComponent implements OnInit {
   selectedCity1: City;
 
   department: any;
-  selectedDepartment: any;
+  category: any;
+  groupItem: any;
+
+  selectedDepartment: City;
+  selectedCategory: City;
+  selectedgroupItem: City;
 
   objForm = {
     firstName: [''],
@@ -167,7 +172,7 @@ export class CustomerComponent implements OnInit {
       .pipe(
         finalize(() => {
           this.isLoading = false;
-          alert('Yes');
+          // alert('Yes');
         })
       )
       .subscribe({
@@ -179,7 +184,30 @@ export class CustomerComponent implements OnInit {
         },
         complete: () => console.log('done'),
       });
-  }
+  } 
+
+ getCategory() {
+  let params = 'parentcode=' + this.selectedCity1 ;
+  this.myservice
+  .getByCondition('category',params)
+  .pipe(
+    finalize(() => {
+      this.isLoading = false;
+      // alert('Yes');
+    })
+  )
+  .subscribe({
+    next: (data) => {
+      this.category = data;
+    },
+    error: (e) => {
+      alert('Error while loading the data');
+    },
+    complete: () => console.log('done'),
+  });
+
+
+ } 
 
   async getDataA(tablename: string) {
     this.AresultShow = {};

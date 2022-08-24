@@ -42,6 +42,11 @@ export class MyHttpService {
     return this.http.get<any>(url) ;
   }
 
+  public getByCondition(pagecode:string,params): Observable<any> {
+    const url = this.apiRoot+ '?pagecode=' + pagecode+ '&'+params;    
+    return this.http.get<any>(url) ;
+  }
+
   public getDatas(): Observable<any> {
     const url = 'https://reqres.in/api/users?page=1';
 

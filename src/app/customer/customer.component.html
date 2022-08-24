@@ -5,6 +5,16 @@
     optionLabel="name"
     optionValue="name"
     [showClear]="true"
+    (click) = "getCategory()"
+    
+    >AsAAA</p-dropdown
+  >
+  <p-dropdown
+    [options]="category"
+    [(ngModel)]="selectedCategory"
+    optionLabel="name"
+    optionValue="name"
+    [showClear]="true"
     >AsAAA</p-dropdown
   >
   Select {{ selectedCity1 }}
