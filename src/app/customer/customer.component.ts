@@ -74,6 +74,7 @@ export class CustomerComponent implements OnInit {
   jobForm = this.fb.group({
     departmentCode: new FormControl('', [Validators.required]),
     categoryCode: new FormControl('', [Validators.required]),
+    groupCode: new FormControl('', [Validators.required]),
   });
 
   preview: string = '';
@@ -134,6 +135,28 @@ export class CustomerComponent implements OnInit {
         complete: () => console.log('done'),
       });
   }
+
+  getgroupItem() {
+    //alert(this.selectedCity1);
+   let params = 'parentcode=' + this.selectedCategory;
+   this.myservice
+     .getByCondition('groupItem', params)
+     .pipe(
+       finalize(() => {
+         this.isLoading = false;
+         // alert('Yes');
+       })
+     )
+     .subscribe({
+       next: (data) => {
+         this.groupItem = data;
+       },
+       error: (e) => {
+         alert('Error while loading the data');
+       },
+       complete: () => console.log('done'),
+     });
+ }
 
   async getDataA(tablename: string) {
     this.AresultShow = {};

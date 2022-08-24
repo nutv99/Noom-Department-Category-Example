@@ -14,7 +14,18 @@
     optionLabel="name"
     optionValue="code"
     [showClear]="true"
+    (click)="getgroupItem()"
     formControlName="categoryCode"
+    >AsAAA</p-dropdown
+  >
+
+  <p-dropdown
+    [options]="groupItem"
+    [(ngModel)]="selectedgroupItem"
+    optionLabel="name"
+    optionValue="code"
+    [showClear]="true"
+    formControlName="groupCode"
     >AsAAA</p-dropdown
   >
 
