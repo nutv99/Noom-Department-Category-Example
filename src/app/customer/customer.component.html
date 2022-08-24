@@ -4,20 +4,20 @@
     [(ngModel)]="selectedCity1"
     optionLabel="name"
     optionValue="code"
-    [showClear]="true"
-    (click) = "getCategory()"
-    
+    (click)="getCategory()"
+    formControlName="departmentCode"
     >AsAAA</p-dropdown
   >
   <p-dropdown
     [options]="category"
     [(ngModel)]="selectedCategory"
     optionLabel="name"
-    optionValue="name"
+    optionValue="code"
     [showClear]="true"
+    formControlName="categoryCode"
     >AsAAA</p-dropdown
   >
-  Select {{ selectedCity1 }}
+
   <!--   
   <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name"
 	[showClear]="true"></p-dropdown>  -->
@@ -55,3 +55,4 @@
     Submit
   </button>
 </form>
+Select {{ selectedCity1 }}

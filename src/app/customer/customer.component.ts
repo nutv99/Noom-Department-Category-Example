@@ -44,12 +44,12 @@ export class CustomerComponent implements OnInit {
   customerid: string = '1';
   isLoading: any;
 
-  cities: any;
+  cities: City[];
   selectedCity1: City;
 
-  department: any;
-  category: any;
-  groupItem: any;
+  department: City[];
+  category: City[];
+  groupItem: City[];
 
   selectedDepartment: City;
   selectedCategory: City;
@@ -71,82 +71,9 @@ export class CustomerComponent implements OnInit {
     updatedby: new FormControl(''),
   };
 
-  // form_ItemMaster = {
-  //   Balance : ['' ],
-  //   BalanceStock : ['' ],
-  //   BrandID : ['' ],
-  //   categoryCode : ['' ,[Validators.required]],
-  //   departmentCode : ['' ,[Validators.required]],
-  //   Description : ['' ],
-  //   Description2 : ['' ],
-  //   discount : ['' ],
-  //   fullPrice : ['' ],
-  //   groupcode : ['' ],
-  //   ImageListBig : ['' ],
-  //   ImageListThumbA : ['' ],
-  //   ImageListThumbB : ['' ],
-  //   isWork : ['' ,[Validators.required]],
-  //   ItemCode : ['' ,[Validators.required]],
-  //   ItemName : ['' ],
-  //   ItemNameShort : ['' ],
-  //   ItemNameURL : ['' ],
-  //   ItemShopCode : ['' ],
-  //   ItemShopURL : ['' ,[Validators.required]],
-  //   lastupdate : ['' ],
-  //   mainImageURL : ['' ],
-  //   numReview : ['' ],
-  //   NumSale : ['' ],
-  //   numView : ['' ],
-  //   pageDetailURL : ['' ],
-  //   pageMetaDesc : ['' ],
-  //   pageTitle : ['' ],
-  //   rating : ['' ],
-  //   SellPrice : ['' ],
-  //   shipCode : ['' ],
-  //   shipFeePerPiece : ['' ],
-  //   ShopCode : ['' ,[Validators.required]],
-  //   subImageURL : ['' ],
-  //   }
-
   jobForm = this.fb.group({
+    departmentCode: new FormControl('', [Validators.required]),
     categoryCode: new FormControl('', [Validators.required]),
-  });
-
-  form_ItemMaster = this.fb.group({
-    Balance: new FormControl(null),
-    BalanceStock: new FormControl(null),
-    BrandID: new FormControl(null),
-    categoryCode: new FormControl(null, [Validators.required]),
-    departmentCode: new FormControl(null, [Validators.required]),
-    Description: new FormControl(null),
-    Description2: new FormControl(null),
-    discount: new FormControl(null),
-    fullPrice: new FormControl(null),
-    groupcode: new FormControl(null),
-    ImageListBig: new FormControl(null),
-    ImageListThumbA: new FormControl(null),
-    ImageListThumbB: new FormControl(null),
-    isWork: new FormControl(null, [Validators.required]),
-    ItemCode: new FormControl(null, [Validators.required]),
-    ItemName: new FormControl(null),
-    ItemNameShort: new FormControl(null),
-    ItemNameURL: new FormControl(null),
-    ItemShopCode: new FormControl(null),
-    ItemShopURL: new FormControl(null, [Validators.required]),
-    lastupdate: new FormControl(null),
-    mainImageURL: new FormControl(null),
-    numReview: new FormControl(null),
-    NumSale: new FormControl(null),
-    numView: new FormControl(null),
-    pageDetailURL: new FormControl(null),
-    pageMetaDesc: new FormControl(null),
-    pageTitle: new FormControl(null),
-    rating: new FormControl(null),
-    SellPrice: new FormControl(null),
-    shipCode: new FormControl(null),
-    shipFeePerPiece: new FormControl(null),
-    ShopCode: new FormControl(null, [Validators.required]),
-    subImageURL: new FormControl(null),
   });
 
   preview: string = '';
@@ -184,31 +111,29 @@ export class CustomerComponent implements OnInit {
         },
         complete: () => console.log('done'),
       });
-  } 
+  }
 
- getCategory() {
-  alert(this.selectedCity1)  ;
-  let params = 'parentcode=' + this.selectedCity1 ;
-  this.myservice
-  .getByCondition('category',params)
-  .pipe(
-    finalize(() => {
-      this.isLoading = false;
-      // alert('Yes');
-    })
-  )
-  .subscribe({
-    next: (data) => {
-      this.category = data;
-    },
-    error: (e) => {
-      alert('Error while loading the data');
-    },
-    complete: () => console.log('done'),
-  });
-
-
- } 
+  getCategory() {
+     //alert(this.selectedCity1);
+    let params = 'parentcode=' + this.selectedCity1;
+    this.myservice
+      .getByCondition('category', params)
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+          // alert('Yes');
+        })
+      )
+      .subscribe({
+        next: (data) => {
+          this.category = data;
+        },
+        error: (e) => {
+          alert('Error while loading the data');
+        },
+        complete: () => console.log('done'),
+      });
+  }
 
   async getDataA(tablename: string) {
     this.AresultShow = {};
