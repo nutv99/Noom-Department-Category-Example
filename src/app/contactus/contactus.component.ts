@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PkDirective} from '../pk-directive.directive' ; 
+import {DiRect2Directive} from '../di-rect2.directive' ; 
                 
 interface City {
   name: string;

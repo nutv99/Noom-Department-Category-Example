@@ -31,6 +31,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { CustomerComponent } from './customer/customer.component';
 import { ContactusComponent } from './contactus/contactus.component';
 
+import {FrmProBrandAddComponent} from './brand/brand.component'
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -62,6 +64,7 @@ import { ContactusComponent } from './contactus/contactus.component';
     ItemFormComponent,
     CustomerComponent,
     ContactusComponent,
+    FrmProBrandAddComponent
   ],
   bootstrap: [AppComponent],
 })

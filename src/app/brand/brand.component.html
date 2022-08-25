@@ -1,0 +1,80 @@
+<p>
+brand works!
+</p>
+<!-- <p>frm1001-add works!</p> -->
+<div class="mb-2" style="background-color: #fff">
+<div class="card-body">
+  <h2 class="m-2" style="font-weight: bold">
+    ฟอร์มบันทึก / แก้ไข ข้อมูลยี่ห้อยี่ห้อสินค้า
+  </h2>
+</div>
+</div>
+{{sForm.value | json}}
+
+<form class="form-card" [formGroup]="sForm" (ngSubmit)="onSubmit()">
+<div class="card m-3">
+  <div class="card-body">
+    <div class="form-group-header mb-3 col-lg-8">
+      <div class="mb-3 row">
+        <label for="product_brand_id" class="col-lg-3 col-form-label"
+          >รหัสยี่ห้อสินค้า</label
+        >
+        <div class="col-lg-6">
+          <input type="text" class="form-control" id="id" name="id" disabled />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="itembrand_name_th" class="col-lg-3 col-form-label"
+          >ชื่อยี่ห้อสินค้า TH</label
+        >
+        <div class="col-lg-6">
+          <input
+            type="text"
+            class="form-control"
+            id="itembrand_name_th"
+            name="itembrand_name_th"
+            formControlName="itembrand_name_th"
+            [(ngModel)]="BrandInfo.itembrand_name_th"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="itembrand_name_en" class="col-lg-3 col-form-label"
+          >ชื่อยี่ห้อสินค้า EN</label
+        >
+        <div class="col-lg-6">
+          <input
+            type="text"
+            class="form-control"
+            id="itembrand_name_en"
+            name="itembrand_name_en"
+            formControlName="itembrand_name_en"
+            [(ngModel)]="BrandInfo.itembrand_name_en"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="buttons m-3">
+  <div class="row">
+    <div class="col-md">
+      <button
+        type="submit"
+        class="btn btn-success shadow-sm mx-2"
+        [disabled]="!sForm.valid"
+      >
+        บันทึก
+      </button>
+      <button
+        type="reset"
+        class="btn btn-warning shadow-sm mx-2"
+        (click)="back()"
+      >
+        ยกเลิก
+      </button>
+    </div>
+  </div>
+</div>
+</form>
