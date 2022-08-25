@@ -10,29 +10,36 @@ import { MyHttpService } from './pick.service';
 import { PkDirective } from './pk-directive.directive';
 import { TableModule } from 'primeng/table';
 import { ItemFormComponent } from './item-form/item-form.component';
-import { AutoCompleteModule } from "primeng/autocomplete";
-import { CalendarModule } from "primeng/calendar";
-import { ChipsModule } from "primeng/chips";
-import { DropdownModule } from "primeng/dropdown";
-import { InputMaskModule } from "primeng/inputmask";
-import { InputNumberModule } from "primeng/inputnumber";
-import { CascadeSelectModule } from "primeng/cascadeselect";
-import { MultiSelectModule } from "primeng/multiselect";
-import { InputTextareaModule } from "primeng/inputtextarea";
-import { InputTextModule } from "primeng/inputtext";
-import {RadioButtonModule} from 'primeng/radiobutton';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { CalendarModule } from 'primeng/calendar';
+import { ChipsModule } from 'primeng/chips';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputMaskModule } from 'primeng/inputmask';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextModule } from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
-import {MenuItem} from 'primeng/api';
-import {SelectItem} from 'primeng/api';
-import {SelectItemGroup} from 'primeng/api';
+import { MenuItem } from 'primeng/api';
+import { SelectItem } from 'primeng/api';
+import { SelectItemGroup } from 'primeng/api';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import {MenubarModule} from 'primeng/menubar';
-import {CustomerComponent} from './customer/customer.component' ;
+import { MenubarModule } from 'primeng/menubar';
+import { CustomerComponent } from './customer/customer.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
-  imports: [BrowserModule, BrowserAnimationsModule,FormsModule, HttpClientModule, TableModule,AutoCompleteModule,
-    
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    TableModule,
+    AutoCompleteModule,
+
     HttpClientModule,
     CalendarModule,
     ChipsModule,
@@ -40,16 +47,22 @@ import {CustomerComponent} from './customer/customer.component' ;
     InputMaskModule,
     InputNumberModule,
     CascadeSelectModule,
-    MultiSelectModule,RadioButtonModule,
+    MultiSelectModule,
+    RadioButtonModule,
     InputTextareaModule,
     InputTextModule,
     MenubarModule,
-    ReactiveFormsModule
-    
-    
+    ReactiveFormsModule,
   ],
   providers: [MyHttpService],
-  declarations: [AppComponent, HelloComponent, PkDirective, ItemFormComponent,CustomerComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    PkDirective,
+    ItemFormComponent,
+    CustomerComponent,
+    ContactusComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

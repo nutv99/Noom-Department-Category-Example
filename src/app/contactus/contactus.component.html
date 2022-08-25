@@ -1,0 +1,14 @@
+<p>
+contactus works!
+<button (click)="setText()">set</button>
+</p>
+<input
+  (appPkDirective)="resultShow = $event"
+  [myurlcode]="'categorymaster'"
+  type="text" [(ngModel)] = "sText"
+/> 
+
+
+<input type='text' [(ngModel)] = "resultShow[0].name">
+{{ resultShow |json }}
+

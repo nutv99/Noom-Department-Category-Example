@@ -16,7 +16,7 @@ import { User, UserInformation } from './user';
 import { MyHttpService } from './pick.service';
 import { categorymaster, categorymaster_PK , department} from './model';
 import { ItemFormComponent } from './item-form/item-form.component' ;
-
+import { ContactusComponent} from './contactus/contactus.component' ;
 
 
 export interface PeriodicElement {
