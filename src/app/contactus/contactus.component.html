@@ -1,20 +1,28 @@
 <p>
-contactus works!
-<button (click)="setText()">set</button>
+  contactus works!
+  <button (click)="setText()">set</button>
 </p>
+Text1
 <input
   (appPkDirective)="resultShow = $event"
   [myurlcode]="'categorymaster'"
-  type="text" [(ngModel)] = "sText"
-/> 
-
+  type="text"
+  [(ngModel)]="sText"
+/>
+<br />
+Text2
 <input
-appDiRect2
-  
-  type="text" [(ngModel)] = "sText"
-/> 
+  (appDiRect2)="resultShow2 = $event"
+  [myurlcodeA]="'bankthai'"
+  type="text"
+  [(ngModel)]="sText2"
+  id="mText2"
+/>
 
-
-<input type='text' [(ngModel)] = "resultShow[0].name">
-{{ resultShow |json }}
-
+<!-- <input type="text" [(ngModel)]="resultShow[0].name" /> -->
+<hr />
+DataShow:: <br />
+{{ resultShow | json }}
+<hr />
+DataShow-2 :: <br />
+{{ resultShow2 | json }}

@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { MyHttpService } from './pick.service';
-import { PkDirective } from './pk-directive.directive';
+
 import { TableModule } from 'primeng/table';
 import { ItemFormComponent } from './item-form/item-form.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -31,7 +31,10 @@ import { MenubarModule } from 'primeng/menubar';
 import { CustomerComponent } from './customer/customer.component';
 import { ContactusComponent } from './contactus/contactus.component';
 
-import {FrmProBrandAddComponent} from './brand/brand.component'
+import {FrmProBrandAddComponent} from './brand/brand.component'  ;
+// Directive 
+import { PkDirective } from './pk-directive.directive';
+import { DiRect2Directive} from './di-rect2.directive' ;
 
 @NgModule({
   imports: [
@@ -61,6 +64,8 @@ import {FrmProBrandAddComponent} from './brand/brand.component'
     AppComponent,
     HelloComponent,
     PkDirective,
+    DiRect2Directive,
+
     ItemFormComponent,
     CustomerComponent,
     ContactusComponent,
