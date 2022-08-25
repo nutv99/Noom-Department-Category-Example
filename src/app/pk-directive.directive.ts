@@ -30,5 +30,7 @@ export class PkDirective {
          this.appPkDirective.emit(response)
       }
       );
-  }
+  } 
+
+  
 }
