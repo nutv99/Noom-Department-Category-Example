@@ -2,6 +2,7 @@
   contactus works!
   <button (click)="setText()">set</button>
 </p>
+<button (click)="setisLoading()">Show Wait</button>
 Text1
 <input
   (appPkDirective)="resultShow = $event"
@@ -20,9 +21,22 @@ Text2
 />
 
 <!-- <input type="text" [(ngModel)]="resultShow[0].name" /> -->
+<ng-container *ngIf="isLoading">
+  <div class="waitContainer">
+    <div class="ring">
+      รอสักครู่..
+      <span></span>
+    </div>
+  </div>
+</ng-container>
 <hr />
+
+<button (click)="StopWating()">Hide</button>
 DataShow:: <br />
 {{ resultShow | json }}
 <hr />
 DataShow-2 :: <br />
 {{ resultShow2 | json }}
+
+<hr />
+Status :: {{ isLoading }}
